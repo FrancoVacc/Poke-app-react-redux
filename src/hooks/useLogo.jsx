@@ -25,45 +25,59 @@ const useLogo = (name) => {
   const typeLogo = (name) => {
     switch (name) {
       case "normal":
-        return <GiPolarStar />;
+        return { color: "bg-neutral-400", icon: <GiPolarStar /> };
       case "fighting":
-        return <FaFistRaised />;
+        return { color: " bg-orange-400", icon: <FaFistRaised /> };
       case "flying":
-        return <GiEgyptianBird />;
+        return { color: " bg-gray-500", icon: <GiEgyptianBird /> };
       case "poison":
-        return <GiPoisonBottle />;
+        return { color: " bg-purple-800", icon: <GiPoisonBottle /> };
+
       case "ground":
-        return <GiUndergroundCave />;
+        return { color: " bg-orange-900", icon: <GiUndergroundCave /> };
       case "rock":
-        return <GiFallingRocks />;
+        return { color: " bg-orange-700", icon: <GiFallingRocks /> };
+
       case "bug":
-        return <GiSpottedBug />;
+        return { color: " bg-lime-400", icon: <GiSpottedBug /> };
       case "ghost":
-        return <GiGhost />;
+        return { color: " bg-indigo-800", icon: <GiGhost /> };
       case "steel":
-        return <GiSteelClaws />;
+        return { color: " bg-gray-700", icon: <GiSteelClaws /> };
       case "fire":
-        return <GiSmallFire />;
+        return { color: " bg-red-800", icon: <GiSmallFire /> };
       case "water":
-        return <GiWaterDrop />;
+        return { color: " bg-blue-800", icon: <GiWaterDrop /> };
       case "grass":
-        return <GiHighGrass />;
+        return { color: " bg-green-800", icon: <GiHighGrass /> };
       case "electric":
-        return <GiElectric />;
+        return { color: " bg-yellow-500", icon: <GiElectric /> };
       case "psychic":
-        return <GiPsychicWaves />;
+        return { color: " bg-fuchsia-800", icon: <GiPsychicWaves /> };
       case "ice":
-        return <GiIceBolt />;
+        return { color: " bg-cyan-400", icon: <GiIceBolt /> };
       case "dragon":
-        return <FaDragon />;
+        return {
+          color: "bg-gradient-to-r from-violet-500 to-fuchsia-500",
+          icon: <FaDragon />,
+        };
       case "dark":
-        return <MdDarkMode />;
+        return {
+          color: "bg-gradient-to-r from-pink-900 to-slate-800",
+          icon: <MdDarkMode />,
+        };
       case "fairy":
-        return <GiFairyWand />;
+        return { color: " bg-pink-700", icon: <GiFairyWand /> };
       case "unknown":
-        return <BsQuestionLg />;
+        return {
+          color: "bg-gradient-to-r from-slate-300 to-gray-500",
+          icon: <BsQuestionLg />,
+        };
       case "shadow":
-        return <GiShadowGrasp />;
+        return {
+          color: "bg-gradient-to-r from-slate-700 to-gray-900",
+          icon: <GiShadowGrasp />,
+        };
       default:
         break;
     }

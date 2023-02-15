@@ -9,9 +9,6 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <div>
-        <h3>POKEDEX APP</h3>
-      </div>
       <div className="relative">
         <img src={pokeBg} alt="" className="absolute z-[-1] min-h-full" />
         <Pokemones />

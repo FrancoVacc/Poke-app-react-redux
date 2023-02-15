@@ -9,6 +9,8 @@ import {
 import Button from "./Button";
 import Detalle from "./Detalle";
 
+import { SiPokemon } from "react-icons/si";
+
 const pokemones = () => {
   const dispatch = useDispatch();
   const pokemones = useSelector((store) => store.pokemones);
@@ -27,9 +29,11 @@ const pokemones = () => {
 
   return (
     <div className="sm:flex sm:justify-around px-4">
-      <div className=" w-72 m-auto sm:mx-0 sm:my-2 py-2 px-5 bg-slate-200 border border-solid border-slate-400 rounded-md ">
-        <h3 className="text-center font-bold text-xl text-gray-800">
-          Pokemons
+      <div className="  w-72 m-auto sm:mx-0 sm:my-2 py-2 px-5 bg-opacity-30 bg-slate-200 border border-solid border-slate-400 rounded-md ">
+        <h3 className="flex justify-center">
+          <span className=" text-9xl text-slate-900">
+            <SiPokemon />
+          </span>
         </h3>
         <ul>
           {pokemones.results.map((pokemon) => (
@@ -70,8 +74,7 @@ const pokemones = () => {
         </div>
       </div>
       {detail && (
-        <div>
-          <h3>Detalle del Pokemon</h3>
+        <div className="py-4">
           <Detalle />
         </div>
       )}

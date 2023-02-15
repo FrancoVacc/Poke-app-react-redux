@@ -7,20 +7,18 @@ const PokeType = () => {
 
   const logo = types.map((type) => {
     const logo = useLogo(type.type.name);
-    console.log(type.slot);
     return logo;
   });
-
-  console.log(logo);
-
   return (
-    <div>
-      {types.length > 1 ? <p>TYPES: </p> : <p>TYPE: </p>}
+    <div className="flex flex-wrap justify-between items-center">
       {types.map((type, index) => (
-        <p key={type.slot} className="uppercase">
-          {type.type.name}
-          <span>{logo[index].logo}</span>
-        </p>
+        <div
+          key={type.slot}
+          className={`flex w-full py-2 px-4 items-center justify-center ${logo[index].logo.color} mx-1 rounded-sm my-1`}
+        >
+          <p className="uppercase text-white">{type.type.name}</p>
+          <span className="ml-2 text-white">{logo[index].logo.icon}</span>
+        </div>
       ))}
     </div>
   );
