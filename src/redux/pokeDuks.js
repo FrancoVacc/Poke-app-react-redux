@@ -61,6 +61,7 @@ export const aPokeDetaillAction = (url) => async (dispatch) => {
         dispatch({
             type: POKEMON_INFO_EXITO,
             payload: {
+                id: res.data.id,
                 name: res.data.name,
                 weight: res.data.weight,
                 height: res.data.height,
@@ -69,6 +70,7 @@ export const aPokeDetaillAction = (url) => async (dispatch) => {
             }
         })
         localStorage.setItem(url, JSON.stringify({
+            id: res.data.id,
             name: res.data.name,
             weight: res.data.weight,
             height: res.data.height,
@@ -94,7 +96,7 @@ export const getPokemonsAction = () => async (dispatch) => {
     }
 
     try {
-        const res = await axios.get(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=20`);
+        const res = await axios.get(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=10`);
         dispatch({
             type: GET_POKEMONS_EXITO,
             payload: res.data

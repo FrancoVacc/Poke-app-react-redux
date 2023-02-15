@@ -1,5 +1,6 @@
 import { Provider } from "react-redux";
 import generateStore from "./redux/store";
+import pokeBg from "./img/poke-bg.png";
 
 import Pokemones from "./component/pokemones";
 
@@ -8,10 +9,11 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <div className="w-100 bg-dark container">
-        <h3 className="text-white ">POKEDEX APP</h3>
+      <div>
+        <h3>POKEDEX APP</h3>
       </div>
-      <div className="container mt-3">
+      <div className="relative">
+        <img src={pokeBg} alt="" className="absolute z-[-1] min-h-full" />
         <Pokemones />
       </div>
     </Provider>
