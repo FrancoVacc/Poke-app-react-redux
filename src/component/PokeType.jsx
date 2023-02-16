@@ -5,6 +5,8 @@ const PokeType = () => {
   const pokemones = useSelector((store) => store.pokemones.unPokemon);
   const { types } = pokemones;
 
+  console.log(types);
+
   const logo = types.map((type) => {
     const logo = useLogo(type.type.name);
     return logo;

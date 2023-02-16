@@ -1,45 +1,13 @@
-import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import useColor from "../hooks/useColor";
 import PokeType from "./PokeType";
 
 const Detalle = () => {
   const pokemones = useSelector((store) => store.pokemones);
+  const { name, weight, height, sprites, types, id } = pokemones.unPokemon;
 
   if (pokemones.unPokemon.length !== 0) {
-    const { name, weight, height, sprites, types, id } = pokemones.unPokemon;
-    const [color, setColor] = useState("");
-
-    const colorTypes = (types) => {
-      const name = types[0].type.name;
-
-      if (name === "grass" || name === "bug")
-        return setColor("bg-gradient-to-b from-green-600 to-green-300");
-      if (
-        name === "poison" ||
-        name === "ghost" ||
-        name === "dark" ||
-        name === "unknown" ||
-        name === "shadow"
-      )
-        return setColor("bg-gradient-to-b from-violet-600 to-violet-300");
-      if (name === "ground" || name === "rock")
-        return setColor(" bg-gradient-to-b from-orange-800 to-orange-400");
-      if (name === "fire" || name === "fighting" || name === "dragon")
-        return setColor(" bg-gradient-to-b from-red-600 to-red-300");
-      if (name === "normal" || name === "flying" || name === "steel")
-        return setColor("bg-gradient-to-b from-slate-600 to-slate-300");
-      if (name === "water" || name === "ice")
-        return setColor("bg-gradient-to-b from-sky-600 to-sky-300");
-      if (name === "psychic" || name === "fairy")
-        return setColor("bg-gradient-to-b from-pink-600 to-pink-300");
-      if (name === "electric")
-        return setColor("bg-gradient-to-b from-yellow-600 to-yellow-300");
-    };
-
-    useEffect(() => {
-      colorTypes(types);
-    });
-
+    const color = useColor(types);
     return (
       <div
         className={`w-sm sm:w-full sm:flex sm:justify-center border ${color} border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700`}
