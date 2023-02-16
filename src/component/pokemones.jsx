@@ -17,9 +17,8 @@ const pokemones = () => {
   const [detail, setDetail] = useState(null);
 
   useEffect(() => {
-    return () => {
-      dispatch(getPokemonsAction());
-    };
+    dispatch(getPokemonsAction());
+    console.log("ejecutado");
   }, []);
 
   const handleDetail = (url) => {
